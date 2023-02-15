@@ -250,9 +250,6 @@ impl SvmPredictor {
                     .ok_or_else(|| Error::UnsupportedPath {
                         path: path.to_owned(),
                     })?
-                    .bytes()
-                    .chain(vec![0])
-                    .collect::<Vec<_>>(),
             )
             .unwrap();
             let raw = cstring.into_raw();
